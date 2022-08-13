@@ -3,37 +3,60 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Aboubacar Kaba Homepage</title>
+    <title>My First Website</title>
   </head>
   <body>
     <section>
-    <h1>About</h1>
-           <p>Hi I'm Aboubacar! I'm a web developer who loves problem-solving. After previous career as a financial auditor in a big4 and an oil and gas company, I decided to completely change my professional life and to become a programmer.
+        <h1>Aboubacar Kaba</h1>
+        <h1>About</h1>
+        <p>Hi I'm Aboubacar! I'm a web developer who loves problem-solving. After previous career as a financial auditor in a big4 and an oil and gas company, I decided to completely change my professional life and to become a programmer.
             I'm currently completing the intro to programming certificate at Code The Dream.</p>
-           <img src="./images/career change.jpg" alt="Transition">
+        <img src="./images/career change.jpg" alt="Transition">
     </section>
     <section>
-    <h1>Experience</h1>
-        <ul>
-            <li>Security Supervisor at Allied Universal, Toms River, NJ   <strong>June 2022 - Present</strong></li>
-            <li>Gap year for family reasons   <strong>July 2020 - May 2022</strong></li>
-            <li>Senior Internal Audit Consultant at Addax Petroleum, Port-Gentil, Gabon   <strong>July 2017 - June 2020</strong></li>
-            <li>Audit Manager at EY, Conakry, Guinea   <strong>November 2011 - June 2017</strong></li>
-        </ul>
+        <h1>Experience</h1>
+            <ul>
+                <li>Security Supervisor at Allied Universal, Toms River, NJ   <strong>June 2022 - Present</strong></li>
+                <li>Gap year for family reasons   <strong>July 2020 - May 2022</strong></li>
+                <li>Senior Internal Audit Consultant at Addax Petroleum, Port-Gentil, Gabon   <strong>July 2017 - June 2020</strong></li>
+                <li>Audit Manager at EY, Conakry, Guinea   <strong>November 2011 - June 2017</strong></li>
+            </ul>
+    </section>
+    <section id="skills">
+        <h2>Skills</h2>
+            <ul class="list"></ul>
     </section>
     <section>
-    <h1>Connect</h1>
-     <ul>
-        <li>
-            <a href="mailto:aboubacar.kaba108@gmail.com">Email</a>
-        </li>
-        <li>
-            <a href="https://github.com/aboubacar108/intro-to-programming-borr">Github</a>
-        </li>
-        <li>
-            <a href="https://www.linkedin.com/in/aboubacar-kaba/">Linkedin</a>
-        </li>
-     </ul>   
+        <h1>Connect</h1>
+            <ul>
+                <li>
+                    <a href="mailto:aboubacar.kaba108@gmail.com">Email</a>
+                </li>
+                <li>
+                    <a href="https://github.com/aboubacar108/intro-to-programming-borr">Github</a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/aboubacar-kaba/">Linkedin</a>
+                </li>
+            </ul>   
     </section>
+    <section>
+        <h2>Leave a Message</h2>
+            <form id="leave_message">
+                <label for="name">Name:</label>
+                <input type="text" name="name" required><br><br>
+                <label for="email">Email:</label>
+                <input type="text" name="email" required><br><br>
+                <textarea rows="4" cols="26" name="message"></textarea><br><br>
+                <button type="submit">Submit</button>
+            </form>
+    </section>
+    <section id="messages">
+        <h2>Messages</h2>
+            <ul class="addedMessage"></ul>
+
+    </section>
+    <footer></footer>
+    <script src="js/index.js" defer></script>
     </body>
 </html>
