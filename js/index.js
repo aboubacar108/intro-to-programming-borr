@@ -34,12 +34,24 @@ function submitForm(event) {
     removeButton.innerText = "remove";
     removeButton.type = "button";
     removeButton.addEventListener('click', removeEvent);
-    function removeEvent() {
-    let entry = document.querySelector('button').parentNode;
-    entry.remove();
+    function removeEvent(e) {
+      e.target.parentNode.remove()
     };
     newMessage.appendChild(removeButton);
     messageList.appendChild(newMessage);
     messageForm.reset();
+}
+
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
 }
 
