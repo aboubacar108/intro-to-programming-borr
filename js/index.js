@@ -2,7 +2,7 @@ let today = new Date();
 let thisYear = today.getFullYear();
 const footer = document.querySelector('footer');
 const copyright = document.createElement('p');
-copyright.innerHTML = `<span>©Aboubacar Kaba ${thisYear}</span>`;
+copyright.innerHTML = `&copy;Aboubacar Kaba ${thisYear}`;
 footer.appendChild(copyright);
 
 const skills = ["Internal & External Audit","Digital Audit using Analytics", "SOX", "IFRS","Financial Analysis & Reporting", "Risk assessment", "Report writing", "Customer Service", "Web Development", "Programming with JavaScript, HTML, CSS", "Advanced Excel" ];
@@ -10,6 +10,7 @@ const skillsSection = document.getElementById('#skills');
 const skillsList = document.querySelector('.list');
 for (let i = 0; i < skills.length; i++) {
     const skill = document.createElement('li');
+    skill.classList.add('tag')
     skill.innerText = skills[i];
     skillsList.appendChild(skill);
   };
@@ -31,14 +32,68 @@ function submitForm(event) {
     newMessage.innerHTML = `<span> <a href = "${Email}">${Name}</a> ${Message}</span>`;
         
     const removeButton = document.createElement('button');
-    removeButton.innerText = "remove";
+    removeButton.innerText = "Remove";
     removeButton.type = "button";
     removeButton.addEventListener('click', removeEvent);
     function removeEvent(e) {
       e.target.parentNode.remove()
-    }
+    };
     newMessage.appendChild(removeButton);
     messageList.appendChild(newMessage);
     messageForm.reset();
 }
+
+function renderProjectsWithXHR() {
+  const githubRequest = new XMLHttpRequest()
+
+  githubRequest.open('GET', 'https://api.github.com/users/aboubacar108/repos')
+
+  githubRequest.addEventListener('load', function () {
+    const data = JSON.parse(this.response)
+
+    // filter out irrelevant repositories
+    const filteredData = data.filter((repo) =>
+      repo.name.includes('intro-to-programming')
+    )
+
+    const projectSection = document.querySelector('#projects')
+    const projectList = projectSection.querySelector('ul')
+
+    for (let repository of filteredData) {
+      const project = document.createElement('li')
+      project.innerHTML = `<a class="link link--no-decor" href="${repository.html_url}">${repository.name}</a>`
+      projectList.appendChild(project)
+    }
+  })
+
+  githubRequest.send()
+}
+
+function renderProjectsWithFetch() {
+  fetch('https://api.github.com/users/aboubacar108/repos')
+    .then((res) => res.json())
+    .then((data) => {
+      // filter out irrelevant repositories
+      const filteredData = data.filter((repo) =>
+        repo.name.includes('intro-to-programming')
+      )
+
+      const projectSection = document.querySelector('#projects')
+      const projectList = projectSection.querySelector('ul')
+
+      for (let repository of filteredData) {
+        const project = document.createElement('li')
+        project.innerHTML = `<a class="link link--no-decor" href="${repository.html_url}">${repository.name}</a>`
+        projectList.appendChild(project)
+      }
+    })
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  //renderProjectsWithXHR()
+  renderProjectsWithFetch()
+})
+
+
+
 
