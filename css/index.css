@@ -1,31 +1,15 @@
 :root {
   --color-primary: #0072e0;
   --color-danger: #dc2626;
-
   --rounded: 3px;
   --rounded-full: 999px;
 }
 
 body {
-    background-color: #EEE;
-    display: flex;
-    flex-direction: column;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    margin: 0;
-    padding: 0;
-  }
-
-p {
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-}
-
-p:not(:last-of-type) {
-  margin-bottom: 1rem;
+  background-color: #EEE;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  margin: 24px;
 }
 
 .strong {
@@ -34,21 +18,22 @@ p:not(:last-of-type) {
 
 .emphasis {
   font-style: italic;
-  color: var(--color-medium);
 }
 
 main {
   flex-grow: 1;
 }
 
-
-
-div {
-  display: block;
+.about, .experience, .lam {
+  width: 80%;
+  padding: 20px;
 }
-section {
-  padding: 3rem;
+
+#skills, #projects, #messages {
+  width: 80%;
+  padding: 20px;
 }
+
 
 .nav {
   align-items: center;
@@ -59,18 +44,18 @@ section {
 
 header {
   background-color: #1094d5;
-  height: 60px;
-  margin: 0;
-  overflow: hidden;
-  position: -webkit-sticky;
+  overflow: visible; 
+  top: 0;
   position: sticky;
-  top: 0; 
-  padding:center;
+  padding:15px;
   height: 60px;
-  font-size: 17px;
+  font-size: 10px;
   display:flex;
   align-items: center;
   justify-content: space-between;
+  width: 80%;
+  float: left;
+  margin-bottom: 20px;
 }
 
 ul {
@@ -98,7 +83,6 @@ ul {
 }
 
 .link {
-  color: var(--color-primary);
   display: inline-block;
   text-decoration: none;
 }
@@ -120,21 +104,23 @@ ul {
   border-radius: var(--rounded-full);
 }
 
-.menu__item a:-webkit-any-link {
+.menu__item a {
   color: white;
   cursor: pointer;
   text-decoration: none;
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
 }
 img.transit {
-    height: 500px;
-    width: 500px;
-    margin-left: auto;
-    margin-right: auto;
- }
+  height: 300px;
+  width: 400px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+    
+}
 
 .tag {
   border-radius: var(--rounded);
@@ -150,14 +136,17 @@ img.transit {
 }
 
 footer {
-  padding:center;
+  padding: 10px;
   height: 60px;
   background-color:lightgray;
-  font-size: 17px;
+  font-size: 15px;
   display:flex;
   align-items: center;
   justify-content: space-between;
   text-align: right;
+  width: 80%;
+  float: left;
+  margin-bottom: 20px;
 }
 
 .fa {
@@ -197,82 +186,73 @@ ul.social {
 
  
 ul.exp li {
-    list-style-type: none;
-    padding: 10px;
-    margin-left:10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    font-size: 14px;
-    cursor: pointer;
+  list-style-type: none;
+  padding: 10px;
+  margin-left:10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 15px;
+  cursor: pointer;
 }
 
 ul.list li {
-    list-style-type: none;
-    cursor: pointer;
+  list-style-type: none;
+  cursor: pointer;
 }
 
 .leave_message {
-    padding: 10px;
-    box-sizing: border-box; 
-   }
+  padding: 10px;
+  box-sizing: border-box; 
+}
 .myForm {
-     display: flex;
-     background-color:#c6522b;
-     border-radius: 3px;
-     padding: 1.8em;
+  background-color:#c6522b;
+  border-radius: 6px;
+  padding: 10px;
+  display:flex;
+  width: 40%;
 }
 .message {
-    padding: 10px;  
-    margin-right: 2em; 
-    display: flex;
-    flex-direction: column;
+  padding: 1%; 
+  text-align: right;
+  margin-top: 1px;
 }
 .message > textarea {
-padding: 10px;
-flex: 1; 
-min-width: 50em;
+  padding: 10px;
+  max-width: 200px;
 }
+
+
 .contact {
-    flex: 1; 
+  flex: 1; 
+  padding: 1%;
+  display: inline-block;
+    
 }
 .contact input {
- width: 90%;
+  width: 100%;
 }
-.contact input,
-.contact button {
- padding: 1em;
- margin-bottom: 1em;
-}
+
 button {
-background: #1094d5;
-color: white;
-border: 0;
-cursor: pointer;
-font-weight: bold;
-width: 100px;
-height: 60px;
+  background: #1094d5;
+  color: white;
+  border: 0;
+  cursor: pointer;
+  font-weight: bold;
+  width: 70px;
+  height: 40px;
+  padding: 10px;
+  margin-top: 10%;
 }
 
 label {
-    font-size: 15px;
-    font-weight:bold;
-    color: #EEE;
+  font-size: 15px;
+  font-weight:bold;
+  color: #EEE;
 }
 
 
-/* Box sizing rules */
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
-}
-
-
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
 }
 
 
@@ -281,36 +261,22 @@ body {
     display: flex;
 }
 
-}
-
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-/* Remove default button styles */
-button {
-  border: none;
-  box-shadow: none;
-  cursor: pointer;
-}
-
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .about, .experience, .lam , header {
+    width: 100%;
+    margin: 10px;
+    font-size: 5px;
   }
+}
 
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  #skills, #projects, #messages {
+    width: 100%;
+    margin: 10px;
+    font-size: 5px;
   }
 }
 
