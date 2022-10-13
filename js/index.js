@@ -93,7 +93,3 @@ document.addEventListener('DOMContentLoaded', () => {
   //renderProjectsWithXHR()
   renderProjectsWithFetch()
 })
-
-
-
-
